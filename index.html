@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luxury Perfume | Authentic fragrances delivered in Kenya</title>
+<meta name="description" content="Shop authentic designer and niche perfumes online in Kenya. Pay with M-Pesa on delivery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="#top">Luxury Perfume</a>
+  <input id="search" type="search" placeholder="Search by name, brand or note" aria-label="Search perfumes">
+  <button id="cartBtn" class="cart-btn" aria-label="Open cart">Cart <span id="cartCount">0</span></button>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Fragrance that arrives before you do.</h1>
+      <p>Authentic perfumes for men, women and everyone, delivered across Kenya. Pay with M-Pesa when it arrives.</p>
+      <a class="btn" href="#shop">Shop perfumes</a>
+    </div>
+    <div class="hero-art" id="heroArt" aria-hidden="true"></div>
+  </section>
+
+  <section class="shop" id="shop">
+    <div class="shop-head">
+      <h2>All perfumes</h2>
+      <div class="filters">
+        <select id="gender" aria-label="Filter by type">
+          <option value="all">Everyone</option>
+          <option value="women">Women</option>
+          <option value="men">Men</option>
+          <option value="unisex">Unisex</option>
+        </select>
+        <select id="sort" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+        </select>
+      </div>
+    </div>
+    <div id="grid" class="grid"></div>
+    <p id="empty" class="empty" hidden>No perfumes match your search. Try a different name or clear the filters.</p>
+  </section>
+
+  <section class="promise">
+    <div><h3>Authentic only</h3><p>Every bottle is sourced from trusted suppliers and sealed.</p></div>
+    <div><h3>Delivery in Kenya</h3><p>Nairobi same day. Other towns in 1 to 3 days.</p></div>
+    <div><h3>Pay on delivery</h3><p>Pay with M-Pesa or cash when your order arrives.</p></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© 2026 Luxury Perfume. Nairobi, Kenya.</p>
+  <a id="waLink" href="#" target="_blank" rel="noopener">Chat with us on WhatsApp</a>
+</footer>
+
+<div id="overlay" class="overlay" hidden></div>
+
+<aside id="cart" class="drawer" aria-label="Shopping cart" hidden>
+  <div class="drawer-head"><h2>Your cart</h2><button id="closeCart" class="icon-btn" aria-label="Close cart">Close</button></div>
+  <div id="cartLines" class="lines"></div>
+  <div class="total-row"><span>Total</span><strong id="cartTotal">KES 0</strong></div>
+  <form id="checkout" class="checkout" novalidate>
+    <h3>Delivery details</h3>
+    <label>Full name<input name="name" required autocomplete="name"></label>
+    <label>Phone (M-Pesa number)<input name="phone" type="tel" placeholder="0712 345 678" required autocomplete="tel"></label>
+    <label>Town or county<input name="town" list="towns" required autocomplete="address-level2"></label>
+    <datalist id="towns"><option>Nairobi</option><option>Mombasa</option><option>Kisumu</option><option>Nakuru</option><option>Eldoret</option><option>Thika</option></datalist>
+    <label>Delivery address or landmark<input name="address" required autocomplete="street-address"></label>
+    <label>Payment<select name="payment"><option>M-Pesa on delivery</option><option>Cash on delivery</option></select></label>
+    <p id="formMsg" class="form-msg" role="alert"></p>
+    <button class="btn full" type="submit">Place order</button>
+  </form>
+</aside>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Product details" hidden></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
