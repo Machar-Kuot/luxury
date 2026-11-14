@@ -1,0 +1,90 @@
+:root{
+  --night:#1a1322; --plum:#261c31; --plum-2:#33263f; --rose:#ecd5d3; --mist:#a89bb3; --brass:#c7a05b;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--night);color:var(--rose);font:16px/1.55 var(--sans);padding-top:env(safe-area-inset-top,0)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+h1,h2,h3,.logo{font-family:var(--serif);font-weight:500;line-height:1.1}
+
+.header{position:sticky;top:0;z-index:20;display:flex;gap:12px;align-items:center;padding:12px 20px;background:var(--night);border-bottom:1px solid var(--plum-2)}
+.logo{font-size:1.6rem;text-decoration:none;white-space:nowrap}
+#search{flex:1;min-width:0;background:var(--plum);border:1px solid var(--plum-2);color:var(--rose);padding:10px 14px;border-radius:999px;font:inherit}
+#search::placeholder{color:var(--mist)}
+.cart-btn{background:none;border:1px solid var(--brass);color:var(--brass);padding:9px 16px;border-radius:999px;font:500 .95rem var(--sans);cursor:pointer;white-space:nowrap}
+.cart-btn span{display:inline-block;min-width:1.4em;margin-left:4px;background:var(--brass);color:var(--night);border-radius:999px;font-size:.8rem;padding:0 6px}
+
+.hero{display:grid;gap:24px;align-items:center;padding:48px 20px 32px;max-width:1100px;margin:0 auto}
+.hero h1{font-size:clamp(2.6rem,9vw,4.6rem);max-width:12ch}
+.hero p{margin:16px 0 24px;color:var(--mist);max-width:44ch}
+.hero-art{display:flex;justify-content:center}
+.hero-art svg{width:min(220px,55vw);height:auto;filter:drop-shadow(0 24px 40px rgba(199,160,91,.18))}
+.btn{display:inline-block;background:var(--brass);color:var(--night);border:0;padding:13px 26px;border-radius:999px;font:600 1rem var(--sans);text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.full{width:100%}
+
+.shop,.promise{max-width:1100px;margin:0 auto;padding:32px 20px}
+.shop-head{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:end;margin-bottom:20px}
+.shop-head h2{font-size:2rem}
+.filters{display:flex;gap:10px}
+select,.checkout input{background:var(--plum);border:1px solid var(--plum-2);color:var(--rose);padding:10px 12px;border-radius:10px;font:inherit}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{background:var(--plum);border:1px solid var(--plum-2);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:border-color .2s}
+.card:hover{border-color:var(--brass)}
+.card .art{background:var(--plum-2);padding:18px 0;display:flex;justify-content:center}
+.card .art svg,.card .art img{height:120px;width:auto;object-fit:contain}
+.card .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:2px;flex:1}
+.brand{font-size:.8rem;color:var(--mist)}
+.card h3{font-size:1.25rem}
+.size{font-size:.85rem;color:var(--mist)}
+.price{color:var(--brass);font-weight:600;margin:6px 0 10px}
+.card .btn{margin-top:auto;padding:10px;font-size:.9rem;text-align:center}
+.empty{color:var(--mist);padding:24px 0}
+
+.promise{display:grid;gap:20px;border-top:1px solid var(--plum-2)}
+.promise h3{font-size:1.4rem;margin-bottom:4px}
+.promise p{color:var(--mist)}
+.footer{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;padding:24px 20px calc(24px + env(safe-area-inset-bottom,0));border-top:1px solid var(--plum-2);color:var(--mist);font-size:.9rem}
+
+.overlay{position:fixed;inset:0;background:rgba(10,6,14,.7);z-index:30}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--plum);z-index:40;overflow-y:auto;padding:20px 20px calc(20px + env(safe-area-inset-bottom,0));transform:translateX(100%);transition:transform .25s}
+.drawer.open{transform:none}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.icon-btn{background:none;border:0;color:var(--mist);font:inherit;cursor:pointer;padding:6px}
+.line{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:12px 0;border-bottom:1px solid var(--plum-2)}
+.line small{color:var(--mist)}
+.qty{display:flex;align-items:center;gap:10px;grid-column:1/-1}
+.qty button{width:30px;height:30px;border-radius:50%;border:1px solid var(--plum-2);background:none;color:var(--rose);cursor:pointer}
+.qty .rm{margin-left:auto;width:auto;border:0;border-radius:0;color:var(--mist);text-decoration:underline}
+.total-row{display:flex;justify-content:space-between;font-size:1.15rem;padding:16px 0}
+.checkout{display:grid;gap:12px}
+.checkout h3{font-size:1.5rem}
+.checkout label{display:grid;gap:4px;font-size:.9rem;color:var(--mist)}
+.checkout input,.checkout select{width:100%}
+.form-msg{min-height:1.2em;font-size:.9rem;color:#f0a5a5}
+.form-msg.ok{color:#a8d8b5}
+
+.modal{position:fixed;inset:0;z-index:50;display:flex;align-items:flex-end;justify-content:center;background:rgba(10,6,14,.75)}
+.modal[hidden]{display:none}
+.sheet{background:var(--plum);width:min(560px,100%);max-height:92vh;overflow-y:auto;border-radius:20px 20px 0 0;padding:24px 20px calc(24px + env(safe-area-inset-bottom,0))}
+.sheet .art{display:flex;justify-content:center;background:var(--plum-2);border-radius:14px;padding:20px;margin-bottom:16px}
+.sheet .art svg,.sheet .art img{height:170px;width:auto}
+.sheet h2{font-size:2rem;margin:2px 0 8px}
+.sheet p{color:var(--mist);margin-bottom:12px}
+.notes{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.notes span{border:1px solid var(--plum-2);border-radius:999px;padding:3px 12px;font-size:.85rem}
+.sheet .row{display:flex;gap:10px;margin-top:8px}
+.sheet .row .btn:last-child{background:none;border:1px solid var(--plum-2);color:var(--rose)}
+
+@media(min-width:720px){
+  .hero{grid-template-columns:1.2fr 1fr;padding-top:72px}
+  .grid{grid-template-columns:repeat(3,1fr);gap:20px}
+  .promise{grid-template-columns:repeat(3,1fr)}
+  .modal{align-items:center}
+  .sheet{border-radius:20px}
+}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.drawer{transition:none}}
